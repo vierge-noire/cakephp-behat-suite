@@ -1,0 +1,15 @@
+#behat.yml
+default:
+  suites:
+    app:
+      paths:
+        - '%paths.base%/tests/Behat/features'
+      contexts:
+        - CakephpBehatSuite\Context\BootstrapContext:
+            bootstrap: '%paths.base%/tests/bootstrap.php'
+    test-plugin:
+      paths:
+        - '%paths.base%/tests/TestApp/plugins/TestPlugin/tests/Behat/features'
+      contexts:
+        - CakephpBehatSuite\Context\BootstrapContext:
+            bootstrap: '%paths.base%/tests/bootstrap.php'

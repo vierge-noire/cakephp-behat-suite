@@ -1,0 +1,8 @@
+parameters:
+    level: 5
+    checkMissingIterableValueType: false
+    bootstrapFiles:
+        - tests/bootstrap.php
+    paths:
+        - src/
+        - tests/Behat
