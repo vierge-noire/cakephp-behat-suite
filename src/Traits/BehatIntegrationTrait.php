@@ -143,7 +143,8 @@ trait BehatIntegrationTrait
     /**
      * @Given I get :url
      *
-     * @param string    $url
+     * @param string $url
+     *
      * @return void
      */
     public function getUrl(string $url): void
