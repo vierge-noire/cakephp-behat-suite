@@ -82,7 +82,7 @@ Configure::write('App', [
     'paths' => [
         'plugins' => [TEST_APP . 'plugins' . DS],
         'templates' => [
-            TEST_APP . 'templates' . DS,
+            TEST_APP . 'src' . DS . 'Template' . DS,
             TEMPLATE_PATH_CAKE_4,
             TEMPLATE_PATH_CAKE_3,
 //            \Cake\Core\Plugin::templatePath('Bake'),
@@ -186,6 +186,7 @@ session_id('cli');
 
 Inflector::rules('singular', ['/(ss)$/i' => '\1']);
 
+\Cake\Core\Plugin::load('TestPlugin');
 Migrator::migrate([
     ['connection' => 'test'],
     ['plugin' => 'TestPlugin'],

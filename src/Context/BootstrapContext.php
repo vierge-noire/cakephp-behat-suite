@@ -38,6 +38,7 @@ class BootstrapContext extends TestCase implements Context
     {
         require_once $bootstrap;
         $this->fixtureInjector = new FixtureInjector(new FixtureManager());
+        $this->setupServer();
     }
 
     /** @BeforeScenario */

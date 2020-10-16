@@ -11,14 +11,14 @@
   "minimum-stability": "dev",
   "require": {
     "behat/behat": "^3.8@dev",
-    "cakephp/cakephp": "^4.0",
-    "pakacuda/cakephp-fixture-factories": "^2.0.3",
-    "vierge-noire/cakephp-test-suite-light": "^2.0"
+    "cakephp/cakephp": "^3.7",
+    "pakacuda/cakephp-fixture-factories": "^1.0.3",
+    "vierge-noire/cakephp-test-suite-light": "^1.0"
   },
   "require-dev": {
     "phpstan/phpstan": "^0.12.48@dev",
-    "phpunit/phpunit": "~8.5.0",
-    "vierge-noire/cakephp-test-migrator": "^2.0"
+    "phpunit/phpunit": "^6.1",
+    "vierge-noire/cakephp-test-migrator": "^1.0"
   },
   "autoload": {
     "psr-4": {
