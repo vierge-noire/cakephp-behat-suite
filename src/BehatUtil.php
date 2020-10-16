@@ -52,6 +52,8 @@ class BehatUtil
                 'a', 'an', 'the', 'this', 'that', 'some',
             ])) {
                 $n = 1;
+            } else {
+                $n = (int) $n;
             }
         }
         return $n;

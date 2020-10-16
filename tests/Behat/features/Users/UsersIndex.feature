@@ -1,13 +1,17 @@
 Feature: Users index
 
   Background:
-    Given I create 1 user with id 1
-    And I am a user with a UsersGroups.Permissions name Users
+    Given I am a user with a UsersGroups.Permissions name Users
     And I log in
 
   Scenario:
-    When I get 'users/index'
+    When I create a user :
+    | username  | email        |
+    | foo       | bar@bar.bar  |
+    And I get 'users/index'
     Then the response is OK
+    And the response contains 'foo'
+    And the response contains 'bar@bar.bar'
 
 #  Get a non existing address
   Scenario:
