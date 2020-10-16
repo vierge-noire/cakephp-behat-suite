@@ -93,7 +93,7 @@ Feature: Users edit
     When I get 'users/edit/1'
     Then the response is OK
 
-# Delete a non existent user
+# Edit a non existent user
   Scenario:
     When I get 'users/edit/2'
     Then the response triggers an error
