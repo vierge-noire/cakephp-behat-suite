@@ -35,7 +35,7 @@ class Plugin extends BasePlugin
      * @param \Cake\Routing\RouteBuilder $routes The route builder to update.
      * @return void
      */
-    public function routes(RouteBuilder $routes): void
+    public function routes($routes): void
     {
         $routes->plugin(
             'TestPlugin',
@@ -55,7 +55,7 @@ class Plugin extends BasePlugin
      * @param \Cake\Http\MiddlewareQueue $middleware The middleware queue to update.
      * @return \Cake\Http\MiddlewareQueue
      */
-    public function middleware(MiddlewareQueue $middlewareQueue): MiddlewareQueue
+    public function middleware($middlewareQueue): MiddlewareQueue
     {
         // Add your middlewares here
 

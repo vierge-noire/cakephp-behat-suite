@@ -15,7 +15,8 @@ declare(strict_types=1);
 namespace TestApp\Controller;
 
 use Cake\Controller\Controller;
-use Cake\Event\EventInterface;
+
+use Cake\Event\Event;
 use TestApp\Model\Table\UsersTable;
 
 class AppController extends Controller
@@ -31,7 +32,7 @@ class AppController extends Controller
         $this->loadComponent('Flash');
     }
 
-    public function beforeFilter(EventInterface $event)
+    public function beforeFilter(Event $event)
     {
         if ($this->getName() === 'Pages') {
             return parent::beforeFilter($event);

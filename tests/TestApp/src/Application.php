@@ -6,9 +6,9 @@ use Cake\Error\Middleware\ErrorHandlerMiddleware;
 use Cake\Http\BaseApplication;
 use Cake\Http\Middleware\BodyParserMiddleware;
 use Cake\Http\Middleware\CsrfProtectionMiddleware;
-use Cake\Http\MiddlewareQueue;
 use Cake\Routing\Middleware\AssetMiddleware;
 use Cake\Routing\Middleware\RoutingMiddleware;
+use Cake\Routing\RouteBuilder;
 
 /**
  * Application setup class.
@@ -34,12 +34,12 @@ class Application extends BaseApplication
      * @param \Cake\Http\MiddlewareQueue $middlewareQueue The middleware queue to setup.
      * @return \Cake\Http\MiddlewareQueue The updated middleware queue.
      */
-    public function middleware(MiddlewareQueue $middlewareQueue): MiddlewareQueue
+    public function middleware($middlewareQueue)
     {
         $middlewareQueue
             // Catch any exceptions in the lower layers,
             // and make an error page/response
-            ->add(new ErrorHandlerMiddleware(Configure::read('Error')))
+            ->add(new ErrorHandlerMiddleware())
 
             // Handle plugin/theme assets like CakePHP normally does.
             ->add(new AssetMiddleware([
@@ -63,8 +63,28 @@ class Application extends BaseApplication
             // https://book.cakephp.org/4/en/controllers/middleware.html#cross-site-request-forgery-csrf-middleware
             ->add(new CsrfProtectionMiddleware([
                 'httponly' => true,
-            ]));
+            ]))
+            ->add(function ($req, $res, $next) {
+                /** @var \Cake\Http\ServerRequest $res */
+                $res = $next($req, $res);
+
+                return $res->withHeader('X-Middleware', 'true');
+            });
+
 
         return $middlewareQueue;
+    }
+
+    /**
+     * Routes hook, used for testing with RoutingMiddleware.
+     *
+     * @param \Cake\Routing\RouteBuilder $routes
+     * @return void
+     */
+    public function routes($routes)
+    {
+        $routes->scope('/app', function (RouteBuilder $routes) {
+            $routes->fallbacks();
+        });
     }
 }
