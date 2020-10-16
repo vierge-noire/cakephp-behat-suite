@@ -11,7 +11,7 @@
   "minimum-stability": "dev",
   "require": {
     "behat/behat": "^3.8@dev",
-    "cakephp/cakephp": "^3.7",
+    "cakephp/cakephp": "^3.8",
     "pakacuda/cakephp-fixture-factories": "^1.0.3",
     "vierge-noire/cakephp-test-suite-light": "^1.0"
   },
