@@ -1,5 +1,8 @@
 #behat.yml
 default:
+  autoload:
+#    Directory where context and features are placed by default
+    '': '%paths.base%/tests/Behat'
   suites:
     app:
       paths:
