@@ -17,4 +17,4 @@ Feature: Bills view
     Given I am a user with a UsersGroups.Permissions name Foo
     And I log in
     When I get 'test-plugin/Bills/view/1'
-    Then I shall be redirected to 'home'
+    Then I am redirected to 'home'

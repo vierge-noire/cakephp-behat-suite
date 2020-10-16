@@ -236,7 +236,7 @@ trait BehatIntegrationTrait
     }
 
     /**
-     * @Then I shall be redirected
+     * @Then I am redirected
      *
      * @return void
      */
@@ -246,7 +246,7 @@ trait BehatIntegrationTrait
     }
 
     /**
-     * @Then I shall be redirected to :string
+     * @Then I am redirected to :string
      *
      * @param string $url
      * @return void

@@ -19,9 +19,9 @@ Feature: Users delete
   Scenario:
     When I post 'users/delete/1'
     Then the user with id 1 does not exist
-    And I shall be redirected to 'users'
+    And I am redirected to 'users'
 
   Scenario:
     When I delete 'users/delete/1'
     Then the user with id 1 does not exist
-    And I shall be redirected to 'users'
+    And I am redirected to 'users'

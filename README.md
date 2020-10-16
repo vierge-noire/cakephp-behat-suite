@@ -103,7 +103,7 @@ Feature: Users edit
     When I post 'users/edit/1' with data:
       | username  | email          |
       | foo       | foo@foo.foo    |
-    Then I shall be redirected to 'users'
+    Then I am redirected to 'users'
     And this user exists:
       | id  | username  | email          |
       | 1   | foo       | foo@foo.foo    |

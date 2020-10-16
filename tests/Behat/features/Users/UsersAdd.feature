@@ -15,4 +15,4 @@ Feature: Users add
     Then this user exists:
       | username  | email          |
       | foo       | foo@foo.foo    |
-    And I shall be redirected to 'users'
+    And I am redirected to 'users'
