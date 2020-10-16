@@ -287,4 +287,14 @@ trait BehatIntegrationTrait
     {
         $this->assertResponseContains($string);
     }
+
+    /**
+     * @Then the flash message shows :msg
+     *
+     * @param string $msg
+     */
+    public function theFlashMessageShows(string $msg): void
+    {
+        $this->assertFlashMessage($msg);
+    }
 }

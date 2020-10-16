@@ -18,6 +18,7 @@ use Behat\Gherkin\Node\TableNode;
 use Cake\Utility\Inflector;
 use CakephpFixtureFactories\Factory\BaseFactory;
 use CakephpFixtureFactories\Util;
+use function _HumbugBox1bed3c66efe8\RingCentral\Psr7\str;
 
 class BehatUtil
 {
@@ -52,6 +53,8 @@ class BehatUtil
                 'a', 'an', 'the', 'this', 'that', 'some',
             ])) {
                 $n = 1;
+            } else {
+                $n = (int) $n;
             }
         }
         return $n;

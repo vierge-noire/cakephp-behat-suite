@@ -20,6 +20,7 @@ Feature: Users delete
     When I post 'users/delete/1'
     Then the user with id 1 does not exist
     And I am redirected to 'users'
+    And the flash message shows 'The user has been deleted.'
 
   Scenario:
     When I delete 'users/delete/1'

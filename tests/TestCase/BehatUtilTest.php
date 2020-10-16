@@ -36,6 +36,7 @@ class BehatUtilTest extends TestCase
             ['some', 1],
             [2, 2],
             [20, 20],
+            ['20', 20],
         ];
     }
 

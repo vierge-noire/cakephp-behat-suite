@@ -40,35 +40,35 @@ trait BehatFixtureFactoriesTrait
     /**
      * @Given I create :n :modelName with :field :value
      *
-     * @param int    $n
+     * @param int|string $n
      * @param string $modelName
      * @param string  $field
      * @param int|string  $value
      * @return array|EntityInterface|EntityInterface[]|ResultSetInterface|false|null
      * @throws Exception
      */
-    public function iCreateModelWithField(int $n, string $modelName, string $field, $value)
+    public function iCreateModelWithField($n, string $modelName, string $field, $value)
     {
         return BehatUtil::getFixtureFactory($modelName)
             ->patchData([$field => $value])
-            ->setTimes($n)
+            ->setTimes(BehatUtil::processN($n))
             ->persist();
     }
 
     /**
      * @Given I create :n :modelName :
      *
-     * @param int    $n
+     * @param int|string    $n
      * @param string $modelName
      * @param TableNode  $data
      * @return array|EntityInterface|EntityInterface[]|ResultSetInterface|false|null
      * @throws Exception
      */
-    public function iCreateModelWithData(int $n, string $modelName, TableNode $data)
+    public function iCreateModelWithData($n, string $modelName, TableNode $data)
     {
         return BehatUtil::getFixtureFactory($modelName)
             ->patchData(BehatUtil::processTableNode($data))
-            ->setTimes($n)
+            ->setTimes(BehatUtil::processN($n))
             ->persist();
     }
 
@@ -95,18 +95,18 @@ trait BehatFixtureFactoriesTrait
     /**
      * @Given I create :n :modelName with :associationPath :
      *
-     * @param int    $n
+     * @param int|string    $n
      * @param string $modelName
      * @param string $associationPath
      * @param TableNode $data
      * @return array|EntityInterface|EntityInterface[]|ResultSetInterface|false|null
      */
-    public function iCreateModelWithAssociatedData(int $n, string $modelName, string $associationPath, TableNode $data)
+    public function iCreateModelWithAssociatedData($n, string $modelName, string $associationPath, TableNode $data)
     {
         $data = BehatUtil::processTableNode($data);
 
         return BehatUtil::getFixtureFactory($modelName)
-            ->setTimes($n)
+            ->setTimes(BehatUtil::processN($n))
             ->with($associationPath, $data)
             ->persist();
     }

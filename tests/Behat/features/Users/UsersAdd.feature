@@ -16,3 +16,4 @@ Feature: Users add
       | username  | email          |
       | foo       | foo@foo.foo    |
     And I am redirected to 'users'
+    And the flash message shows 'The user has been saved.'
