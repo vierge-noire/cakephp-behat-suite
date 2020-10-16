@@ -21,6 +21,7 @@
 use Cake\Routing\RouteBuilder;
 use Cake\Routing\Router;
 
+Router::defaultRouteClass(\Cake\Routing\Route\DashedRoute::class);
 
 Router::scope('/', function (RouteBuilder $routes) {
 
@@ -30,5 +31,5 @@ Router::scope('/', function (RouteBuilder $routes) {
      * ...and connect the rest of 'Pages' controller's URLs.
      */
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
-    $routes->fallbacks();
+    $routes->fallbacks(\Cake\Routing\Route\DashedRoute::class);
 });

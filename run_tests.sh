@@ -38,4 +38,4 @@ else
 fi
 
 ./vendor/bin/phpunit
-./vendor/bin/behat
+./vendor/bin/behat -vv

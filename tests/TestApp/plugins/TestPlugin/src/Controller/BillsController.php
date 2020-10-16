@@ -51,7 +51,7 @@ class BillsController extends AppController
      */
     public function add()
     {
-        $bill = $this->Bills->newEmptyEntity();
+        $bill = $this->Bills->newEntity();
         if ($this->request->is('post')) {
             $bill = $this->Bills->patchEntity($bill, $this->request->getData());
             if ($this->Bills->save($bill)) {
