@@ -3,3 +3,4 @@ tmp/
 .idea
 composer.lock
 /.phpunit.result.cache
+test
