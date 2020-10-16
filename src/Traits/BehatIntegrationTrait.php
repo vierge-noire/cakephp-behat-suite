@@ -30,7 +30,7 @@ trait BehatIntegrationTrait
     /**
      * @var EntityInterface $user
      */
-    protected $user;
+    public $user;
 
     /**
      * @Given I am a/an :model
