@@ -16,17 +16,13 @@ namespace CakephpBehatSuite\Context;
 
 use Behat\Behat\Context\Context;
 use Cake\TestSuite\TestCase;
-use CakephpBehatSuite\Traits\BehatFixtureFactoriesTrait;
 use CakephpBehatSuite\Traits\BehatIntegrationTrait;
-use CakephpBehatSuite\Traits\BehatTableRegistryTrait;
 use CakephpTestSuiteLight\FixtureInjector;
 use CakephpTestSuiteLight\FixtureManager;
 
 class BootstrapContext extends TestCase implements Context
 {
     use BehatIntegrationTrait;
-    use BehatFixtureFactoriesTrait;
-    use BehatTableRegistryTrait;
 
     /**
      * @var FixtureInjector $fixtureInjector
