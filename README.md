@@ -2,9 +2,14 @@
 A CakePHP dedicated suite for behavior driven development.
 
 ## Installation
-For CakePHP 4.x:
+For CakePHP ^4.0:
 ```
 composer require --dev vierge-noire/cakephp-behat-suite "^0.2"
+```
+
+For CakePHP ^3.8:
+```
+composer require --dev vierge-noire/cakephp-behat-suite "^0.1"
 ```
 
 ## Setup
