@@ -44,6 +44,9 @@ For each suite, you will have to specify the location of your features under the
 
 The package provides a set of steps defined by `CakephpBehatSuite\Context\BootstrapContext`.
 
+## Run your tests
+The command `vendor/bin/behat` will run your tests as defined in the `behat.yml file.
+
 ## Fixture factories
 The package makes uses of the CakePHP fixture factories plugin. Make sure your factories are
 baked and working, in order to use the present package.
@@ -56,36 +59,8 @@ The `CakephpBehatSuite\Context\BootstrapContext` contains a set of steps, docume
 The Context will ensure that the test database gets emptied before each scenario.
 
 ## Example
-### behat.yml with plugin
-
-This behat file includes a suite for a dummy plugin MyCustomPlugin. For each suite, a Context has been added too.
-
-Once your `behat.yml` file has been created, run `vendor/bin/behat --init` to automatically create the folders and Context
-classes as defined in the config file.
-
-```
-#behat.yml
-default:
-  autoload:
-    '': '%paths.base%/tests/Behat'
-  suites:
-    app:
-      paths:
-        - '%paths.base%/tests/Behat/features'
-      contexts:
-        - CakephpBehatSuite\Context\BootstrapContext:
-            bootstrap: '%paths.base%/tests/bootstrap.php'
-        - Context\AppContext
-    my-custom-plugin:
-      paths:
-        - '%paths.base%/plugins/MyCustomPlugin/tests/Behat/features'
-      contexts:
-        - CakephpBehatSuite\Context\BootstrapContext:
-            bootstrap: '%paths.base%/tests/bootstrap.php'
-        - Context\TestPluginContext
-```
-
 ### Feature
+This is how an integration on the edit action of your UsersController could be: 
 ```
 Feature: Users edit
 
@@ -113,6 +88,32 @@ Feature: Users edit
       | id  | username  | email          |
       | 1   | foo       | foo@foo.foo    |
 
+```
+
+### behat.yml with plugin
+
+This behat file includes a suite for a dummy plugin MyCustomPlugin. For each suite, a Context has been added too.
+
+```
+#behat.yml
+default:
+  autoload:
+    '': '%paths.base%/tests/Behat'
+  suites:
+    app:
+      paths:
+        - '%paths.base%/tests/Behat/features'
+      contexts:
+        - CakephpBehatSuite\Context\BootstrapContext:
+            bootstrap: '%paths.base%/tests/bootstrap.php'
+        - Context\AppContext
+    my-custom-plugin:
+      paths:
+        - '%paths.base%/plugins/MyCustomPlugin/tests/Behat/features'
+      contexts:
+        - CakephpBehatSuite\Context\BootstrapContext:
+            bootstrap: '%paths.base%/tests/bootstrap.php'
+        - Context\TestPluginContext
 ```
 
 ## Use Migrations
