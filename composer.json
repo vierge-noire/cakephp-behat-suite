@@ -12,7 +12,7 @@
   "require": {
     "behat/behat": "^3.8@dev",
     "cakephp/cakephp": "^4.0",
-    "pakacuda/cakephp-fixture-factories": "^2.0.3",
+    "vierge-noire/cakephp-fixture-factories": "^2.5",
     "vierge-noire/cakephp-test-suite-light": "^2.0"
   },
   "require-dev": {
